@@ -1,9 +1,8 @@
 import random
 import torch
 from tensorboardX import SummaryWriter
-from utils.utils import plot_alignment_to_numpy, plot_spectrogram_to_numpy
-from utils.utils import plot_gate_outputs_to_numpy
 
+from utils.plotting_utils import plot_alignment_to_numpy, plot_spectrogram_to_numpy, plot_gate_outputs_to_numpy
 
 class Tacotron2Logger(SummaryWriter):
     def __init__(self, logdir):

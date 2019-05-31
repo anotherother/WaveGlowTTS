@@ -1,6 +1,6 @@
-import copy
+
 import torch
-from glow import Invertible1x1Conv, remove
+from neural_net.architecture.waveglow.glow import Invertible1x1Conv, remove
 
 
 @torch.jit.script

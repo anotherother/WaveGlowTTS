@@ -29,14 +29,16 @@ import json
 import os
 import torch
 
+from neural_net.architecture.waveglow.distributed import init_distributed, reduce_tensor
+
 #=====START: ADDED FOR DISTRIBUTED======
-from utils.distributed import init_distributed, apply_gradient_allreduce, reduce_tensor
+from utils.distributed import apply_gradient_allreduce
 from torch.utils.data.distributed import DistributedSampler
 #=====END:   ADDED FOR DISTRIBUTED======
 
 from torch.utils.data import DataLoader
-from glow import WaveGlow, WaveGlowLoss
-from mel2samp import Mel2Samp
+from neural_net.architecture.waveglow.glow import WaveGlow, WaveGlowLoss
+from neural_net.architecture.waveglow.mel2samp import Mel2Samp
 
 def load_checkpoint(checkpoint_path, model, optimizer):
     assert os.path.isfile(checkpoint_path)
