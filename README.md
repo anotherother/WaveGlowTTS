@@ -11,7 +11,7 @@ Distributed and Automatic Mixed Precision support relies on NVIDIA's [Apex] and 
 Visit our [website] for audio samples using our published [Tacotron 2] and
 [WaveGlow] models.
 
-![Alignment, Predicted Mel Spectrogram, Target Mel Spectrogram](tensorboard.png)
+![Alignment, Predicted Mel Spectrogram, Target Mel Spectrogram](img/tensorboard.png)
 
 
 ## Pre-requisites

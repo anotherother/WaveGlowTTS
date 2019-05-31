@@ -34,8 +34,9 @@ import sys
 from scipy.io.wavfile import read
 
 # We're using the audio processing from TacoTron2 to make sure it matches
-sys.path.insert(0, 'tacotron2')
-from tacotron2.layers import TacotronSTFT
+from neural_net.custom_layers.layers import TacotronSTFT
+
+sys.path.insert(0, 'neural_net/waveglow/tacotron2')
 
 MAX_WAV_VALUE = 32768.0
 

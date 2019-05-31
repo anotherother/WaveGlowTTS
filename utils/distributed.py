@@ -101,24 +101,6 @@ class DistributedDataParallel(Module):
         self.needs_reduction = True
         return self.module(*inputs, **kwargs)
 
-    '''
-    def _sync_buffers(self):
-        buffers = list(self.module._all_buffers())
-        if len(buffers) > 0:
-            # cross-node buffer sync
-            flat_buffers = _flatten_dense_tensors(buffers)
-            dist.broadcast(flat_buffers, 0)
-            for buf, synced in zip(buffers, _unflatten_dense_tensors(flat_buffers, buffers)):
-                buf.copy_(synced)
-     def train(self, mode=True):
-        # Clear NCCL communicator and CUDA event cache of the default group ID,
-        # These cache will be recreated at the later call. This is currently a
-        # work-around for a potential NCCL deadlock.
-        if dist._backend == dist.dist_backend.NCCL:
-            dist._clear_group_cache()
-        super(DistributedDataParallel, self).train(mode)
-        self.module.train(mode)
-    '''
 '''
 Modifies existing model to do gradient allreduce, but doesn't change class
 so you don't need "module"

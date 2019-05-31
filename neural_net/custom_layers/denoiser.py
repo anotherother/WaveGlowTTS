@@ -1,7 +1,7 @@
 import sys
-sys.path.append('tacotron2')
+sys.path.append('neural_net/waveglow/tacotron2')
 import torch
-from layers import STFT
+from neural_net.custom_layers.layers import STFT
 
 
 class Denoiser(torch.nn.Module):
